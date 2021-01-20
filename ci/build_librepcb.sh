@@ -41,7 +41,7 @@ echo "Using CC=$CC"
 echo "Using CFLAGS=$CFLAGS"
 echo "Using CXXFLAGS=$CXXFLAGS"
 mkdir -p build && pushd build
-cmake .. -DCMAKE_INSTALL_PREFIX=$(pwd)/install/opt
+cmake .. -DCMAKE_INSTALL_PREFIX=$(pwd)/install/opt -DLIBREPCB_DEV_BUILD=0
 VERBOSE=1 make -j8
 make install
 popd
