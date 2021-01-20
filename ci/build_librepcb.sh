@@ -40,10 +40,11 @@ echo "Using CXX=$CXX"
 echo "Using CC=$CC"
 echo "Using CFLAGS=$CFLAGS"
 echo "Using CXXFLAGS=$CXXFLAGS"
-mkdir build && cd build
+mkdir -p build && pushd build
 cmake .. -DCMAKE_INSTALL_PREFIX=$(pwd)/install/opt
 VERBOSE=1 make -j8
 make install
+popd
 
 # Prepare artifacts directory
 mkdir -p ./artifacts/nightly_builds
